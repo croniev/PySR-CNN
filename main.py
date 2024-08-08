@@ -12,12 +12,12 @@ print('Model loaded succesfully!')
 print(cnn)
 
 # Get Kernels
-# print(f"Kernels of first layer: ")
-# for name, param in cnn.named_parameters():
-#     if name == 'conv1.0.weight':
-#         kernels1 = param
-#         break
-# print(kernels1)
+print(f"first kernel of first layer: ")
+for name, param in cnn.named_parameters():
+    if name == 'conv1.weight':
+        kernels1 = param
+        break
+print(kernels1[0])
 
 # Load dataset
 test_data = datasets.MNIST(root='data', train=False, transform=ToTensor(),)
